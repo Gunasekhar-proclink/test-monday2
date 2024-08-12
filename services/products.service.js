@@ -8,7 +8,7 @@ async function UpdateProductById(Product, updateProduct) {
 }
 
 async function deleteProductById(id) {
-  await Movies.delete({ productId: id }).go();
+  await Products.delete({ productId: id }).go();
 }
 
 async function getProductsById(id) {

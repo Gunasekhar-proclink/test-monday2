@@ -38,8 +38,6 @@ async function deleteProductCtr(request, response) {
   try {
     const Product = await getProductsById(id);
     if (Product.data) {
-      // const mid = movies.indexOf(movie);
-      // movies.splice(mid, 1);
       await deleteProductById(id);
       response.send({ msg: "Movie deleted 🎉" });
     } else {
@@ -69,7 +67,7 @@ async function updateProductCtr(request, response) {
   const { id } = request.params;
   const updateProduct = request.body;
   try {
-    const Product = await getMoviesById(id);
+    const Product = await getProductsById(id);
     if (Product.data) {
       const mergedData = await UpdateProductById(Product, updateProduct);
       console.log("updated..");
