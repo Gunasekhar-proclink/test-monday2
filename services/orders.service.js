@@ -4,9 +4,12 @@ async function createOrder(orderData) {
   return await Order.create(orderData).go();
 }
 
-async function getOrdersByUserId(userId) {
-  //   return await Order.query.userId(userId).go();
-  return await Order.get({ userId }).go();
+async function getOrdersByUserId(userID ) {
+
+  return await Order.scan
+  .where(
+    ({ userId}, { eq }) => eq(userId, userID)
+  ).go();
 }
 
 export { createOrder, getOrdersByUserId };

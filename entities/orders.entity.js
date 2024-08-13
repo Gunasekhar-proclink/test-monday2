@@ -5,7 +5,7 @@ const Order = new Entity(
   {
     model: {
       entity: "Order",
-      version: "1",
+      version: "2",
       service: "OrderService",
     },
     attributes: {
@@ -43,7 +43,7 @@ const Order = new Entity(
       primary: {
         pk: {
           field: "pk",
-          facets: ["userId"],
+          facets: ["orderId"],
         },
         sk: {
           field: "sk",
