@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import productsRouter from "./routes/products.route.js";
 import cartRouter from "./routes/cart.route.js";
+import orderRouter from "./routes/orders.route.js";
 import usersRouter from "./routes/users.route.js";
 
 
@@ -16,6 +17,9 @@ app.get("/", function (request, response) {
 
 app.use("/products", productsRouter);
 app.use("/cart", cartRouter);
+app.use("/orders", orderRouter);
+
+
 app.use("/user", usersRouter);
 
 
