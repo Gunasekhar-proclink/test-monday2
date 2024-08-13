@@ -13,7 +13,7 @@ import {
 const router = express.Router();
 
 
-router.get("/", auth ,  getAllProductsCtr);
+router.get("/",  getAllProductsCtr);
 
 router.get("/:id", getProductIdCtr);
 
