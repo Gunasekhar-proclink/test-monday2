@@ -1,7 +1,7 @@
 import express, { response } from "express";
 import { v4 as uuidv4 } from "uuid";
 import { Products } from "../entities/products.entity.js";
-// import { auth } from "../middleware/auth.middleware.js";
+import { auth } from "../middlewares/auth.middleware.js";
 import {
   getAllProductsCtr,
   deleteProductCtr,
@@ -13,7 +13,7 @@ import {
 const router = express.Router();
 
 
-router.get("/",  getAllProductsCtr);
+router.get("/", auth ,  getAllProductsCtr);
 
 router.get("/:id", getProductIdCtr);
 
